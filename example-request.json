@@ -1,0 +1,323 @@
+{
+  "input": {
+    "workflow": {
+      "5": {
+        "inputs": {
+          "value": true,
+          "SUPIR_VAE": [
+            "21",
+            1
+          ],
+          "image": [
+            "23",
+            0
+          ]
+        },
+        "class_type": "SUPIR_first_stage",
+        "_meta": {
+          "title": "SUPIR_first_stage"
+        }
+      },
+      "7": {
+        "inputs": {
+          "value": 405338,
+          "SUPIR_model": [
+            "21",
+            0
+          ],
+          "latents": [
+            "11",
+            0
+          ],
+          "positive": [
+            "9",
+            0
+          ],
+          "negative": [
+            "9",
+            1
+          ]
+        },
+        "class_type": "SUPIR_sample",
+        "_meta": {
+          "title": "SUPIR_sample"
+        }
+      },
+      "9": {
+        "inputs": {
+          "filename": "high quality, detailed, professional photo, solo, looking_at_viewer,   lips, portrait, close-up, realistic, masterpiece, best quality, very clear, (masterpiece, highest quality, best quality), portrait, exceptional detail, the highest detail, (super detailed eyes:1.2), detailed texture of the skin,",
+          "SUPIR_model": [
+            "153",
+            0
+          ],
+          "latents": [
+            "5",
+            2
+          ],
+          "captions": [
+            "36",
+            0
+          ]
+        },
+        "class_type": "SUPIR_conditioner",
+        "_meta": {
+          "title": "SUPIR_conditioner"
+        }
+      },
+      "10": {
+        "inputs": {
+          "value": true,
+          "SUPIR_VAE": [
+            "21",
+            1
+          ],
+          "latents": [
+            "7",
+            0
+          ]
+        },
+        "class_type": "SUPIR_decode",
+        "_meta": {
+          "title": "SUPIR_decode"
+        }
+      },
+      "11": {
+        "inputs": {
+          "value": true,
+          "SUPIR_VAE": [
+            "5",
+            0
+          ],
+          "image": [
+            "5",
+            1
+          ]
+        },
+        "class_type": "SUPIR_encode",
+        "_meta": {
+          "title": "SUPIR_encode"
+        }
+      },
+      "21": {
+        "inputs": {
+          "filename": "SUPIR-v0Q_fp16.safetensors",
+          "model": [
+            "22",
+            0
+          ],
+          "clip": [
+            "22",
+            1
+          ],
+          "vae": [
+            "22",
+            2
+          ]
+        },
+        "class_type": "SUPIR_model_loader_v2",
+        "_meta": {
+          "title": "SUPIR_model_loader_v2"
+        }
+      },
+      "22": {
+        "inputs": {
+          "ckpt_name": "jibMixRealisticXL_v10Lightning46Step.safetensors"
+        },
+        "class_type": "CheckpointLoaderSimple",
+        "_meta": {
+          "title": "CheckpointLoaderSimple"
+        }
+      },
+      "23": {
+        "inputs": {
+          "upscale_method": "lanczos",
+          "width": 512,
+          "height": 2500,
+          "crop": "disabled",
+          "image": [
+            "120",
+            0
+          ]
+        },
+        "class_type": "ImageScale",
+        "_meta": {
+          "title": "ImageScale"
+        }
+      },
+      "24": {
+        "inputs": {
+          "filename_prefix": "SupirV22",
+          "images": [
+            "10",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "36": {
+        "inputs": {
+          "text": [
+            "69",
+            2
+          ]
+        },
+        "class_type": "ShowText|pysssss",
+        "_meta": {
+          "title": "ShowText|pysssss"
+        }
+      },
+      "48": {
+        "inputs": {
+          "value": 512,
+          "images": [
+            "157",
+            0
+          ]
+        },
+        "class_type": "ConstrainImage|pysssss",
+        "_meta": {
+          "title": "ConstrainImage|pysssss"
+        }
+      },
+      "68": {
+        "inputs": {
+          "filename": "MiaoshouAI/Florence-2-large-PromptGen-v1.5"
+        },
+        "class_type": "DownloadAndLoadFlorence2Model",
+        "_meta": {
+          "title": "DownloadAndLoadFlorence2Model"
+        }
+      },
+      "69": {
+        "inputs": {
+          "text": "",
+          "image": [
+            "157",
+            0
+          ],
+          "florence2_model": [
+            "68",
+            0
+          ]
+        },
+        "class_type": "Florence2Run",
+        "_meta": {
+          "title": "Florence2Run"
+        }
+      },
+      "77": {
+        "inputs": {
+          "image": "гз60 40х60 копия.jpg"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "исходник"
+        }
+      },
+      "107": {
+        "inputs": {
+          "text": "wd-v1-4-convnextv2-tagger-v2",
+          "image": [
+            "157",
+            0
+          ]
+        },
+        "class_type": "WD14Tagger|pysssss",
+        "_meta": {
+          "title": "WD14Tagger|pysssss"
+        }
+      },
+      "108": {
+        "inputs": {
+          "text": [
+            "107",
+            0
+          ]
+        },
+        "class_type": "ShowText|pysssss",
+        "_meta": {
+          "title": "ShowText|pysssss"
+        }
+      },
+      "120": {
+        "inputs": {
+          "filename": "SUPIR-v0F_fp16.safetensors",
+          "image": [
+            "48",
+            0
+          ],
+          "captions": [
+            "107",
+            0
+          ]
+        },
+        "class_type": "SUPIR_Upscale",
+        "_meta": {
+          "title": "SUPIR_Upscale"
+        }
+      },
+      "149": {
+        "inputs": {
+          "value": [
+            {
+              "name": "A",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_pvbuj_00001_.png&type=temp&subfolder=&rand=0.047704832537135644"
+            },
+            {
+              "name": "B",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_pvbuj_00002_.png&type=temp&subfolder=&rand=0.3747318200390114"
+            }
+          ],
+          "image_a": [
+            "10",
+            0
+          ],
+          "image_b": [
+            "77",
+            0
+          ]
+        },
+        "class_type": "Image Comparer (rgthree)",
+        "_meta": {
+          "title": "Image Comparer (rgthree)"
+        }
+      },
+      "152": {
+        "inputs": {
+          "anything": [
+            "69",
+            0
+          ]
+        },
+        "class_type": "easy clearCacheAll",
+        "_meta": {
+          "title": "easy clearCacheAll"
+        }
+      },
+      "153": {
+        "inputs": {
+          "anything": [
+            "21",
+            0
+          ]
+        },
+        "class_type": "easy clearCacheAll",
+        "_meta": {
+          "title": "easy clearCacheAll"
+        }
+      },
+      "157": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      }
+    }
+  }
+}
